@@ -2,26 +2,30 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
 
-## Development server
+## Bienvenido!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Con esta herramienta, puedes registrar y organizar elementos personalizados de forma rápida y sencilla. Diseña componentes impresionantes utilizando HTML, CSS y JS, y dale vida a tus ideas en la web.
 
-## Code scaffolding
+## Función
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Esta aplicación te permite nombrar cada elemento, asignarle una URL personalizada donde se mostrará el elemento creado y cargar una imagen para una vista previa visual. Además, puedes proporcionar una descripción detallada del elemento para transmitir su propósito y características destacadas.
 
-## Build
+Ya sea que necesites crear componentes para tu sitio web personal, un proyecto de desarrollo web o una aplicación empresarial, esta aplicación con tecnología Angular es la herramienta perfecta para ti. Ahorra tiempo y esfuerzo en la creación de elementos personalizados y obtén resultados profesionales.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+¡Desata tu creatividad y comienza a construir elementos sorprendentes con nuestra aplicación Angular ahora!
 
-## Running unit tests
+## Descargar e iniciar
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* Busca el botón "Code" o "Código" en la página del repositorio y haz clic en él. A continuación, se desplegará un menú con opciones de descarga.
 
-## Running end-to-end tests
+* Selecciona la opción "Download ZIP" o "Descargar ZIP" para descargar el proyecto en formato comprimido ZIP a tu computadora.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+* Una vez que la descarga se haya completado, descomprime el archivo ZIP en una ubicación de tu elección.
 
-## Further help
+* Abre una terminal o línea de comandos en tu computadora y navega hasta la carpeta del proyecto recién descomprimido.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* Asegúrate de tener instalado Node.js y npm (Node Package Manager) en tu sistema. Puedes verificar su instalación ejecutando los comandos ``node -v`` y ``npm -v`` en la terminal. Si no los tienes instalados, dirígete al sitio web oficial de Node.js y sigue las instrucciones de instalación.
+
+* Ejecuta el comando `npm install` en la terminal para instalar todas las dependencias del proyecto.
+
+* Una vez que la instalación haya finalizado, ejecuta el comando ``ng serve`` en la terminal. Esto iniciará el servidor de desarrollo de Angular y podrás ver tu aplicación en tu navegador web en la dirección ``http://localhost:4200``
