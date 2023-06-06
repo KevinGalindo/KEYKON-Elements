@@ -1,0 +1,19 @@
+<div class="form" [formGroup]="form">
+    <h2>{{status}} Elemento</h2>
+    <div class="inputBox" [class.invalid]="form.get('name')?.invalid && form.get('name')?.touched">
+        <input type="text" required="required" formControlName="name">
+        <span>Nombre de la categoria</span>
+        <i></i>
+    </div>
+    <div class="inputBox" [class.invalid]="form.get('color')?.invalid && form.get('color')?.touched">
+        <input type="text" required="required" formControlName="color">
+        <span>Color de la categoria</span>
+        <i></i>
+    </div>
+    <div class="inputBox" [class.invalid]="form.get('desc')?.invalid && form.get('desc')?.touched">
+        <textarea required="required" formControlName="desc"></textarea>
+        <span>Descripción de la categoria</span>
+        <i></i>
+    </div>
+    <button (click)="send()" class="submit">{{status}}</button>
+</div>

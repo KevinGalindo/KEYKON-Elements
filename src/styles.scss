@@ -1,1 +1,175 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$keykon-material-primary: mat.define-palette(mat.$indigo-palette);
+$keykon-material-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$keykon-material-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$keykon-material-theme: mat.define-light-theme((
+  color: (
+    primary: $keykon-material-primary,
+    accent: $keykon-material-accent,
+    warn: $keykon-material-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($keykon-material-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif !important;
+}
+
+.dark{
+  --blue: #00bcd4;
+  --white: #fff;
+  --text-color: #f5f5f5;
+  --cards-bg: #293145;
+  --black1: #222;
+  --black2: #999;
+  --background: #1a2236;
+  --primary: #293145;
+  --color-logo: #00bcd4;
+}
+
+.day{
+  --blue: #00bcd4;
+  --white: #222;
+  --text-color: #333;
+  --cards-bg: #fff;
+  --black1: #222;
+  --black2: #999;
+  --background: #f3f3f3;
+  --primary: #00bcd4;
+  --color-logo: #fff;
+}
+
+html, body { height: 100%; }
+
+::selection{
+  background-color: var(--blue);
+}
+
+::-webkit-scrollbar{
+  width: 10px;
+  background-color: var(--background);
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: var(--primary);
+}
+
+body{
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--background);
+}
+
+// Estilos de forms
+@import './styles/forms.styles.scss';
+
+// Filter styles
+@import './styles/filter-container.scss';
+
+// Estilos de las cards
+@import './styles/card-elements.scss';
+
+// Css de Mat Dialog
+.mat-dialog-container{
+  background: var(--cards-bg);
+  position: relative;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border-radius: 8px !important;
+}
+
+.mat-snack-bar-container{
+  background: var(--cards-bg) !important;
+  padding: 0 !important;
+}
+
+.btn-icon{
+  color: var(--text-color);
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.btn{
+  border: none;
+  outline: none;
+  background: var(--blue);
+  color: #fff;
+  padding: 11px 25px;
+  margin-top: 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.mat-h2, .mat-title, .mat-typography h2{
+  font: 15px Arial, sans-serif;
+}
+
+@media (max-width: 991px){
+  .navigation{
+    left: -300px;
+    &.active{
+      width: 300px !important;
+      left: 0;
+    }
+  }
+  .main{
+    width: 100% !important;
+    left: 0 !important;
+    &.active{
+      left: 300px !important;
+    }
+  }
+}
+@media (max-width: 480px){
+  .container .navigation{
+    width: 100% !important;
+    left: -100%;
+    z-index: 1000;
+    &.active{
+      width: 100% !important;
+      left: 0;
+    }
+    ul li a .title{
+      padding: 0 !important;
+    }
+  }
+  .toggle{
+    z-index: 10001 !important;
+  }
+  .main.active .toggle{
+    position: fixed !important;
+    right: 0;
+    left: initial;
+    color: var(--white);
+  }
+}

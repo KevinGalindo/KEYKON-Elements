@@ -1,0 +1,14 @@
+<div class="select-container">
+    <ul class="list-items" [formControl]="toppings" multiple>
+        <li class="item" 
+            *ngFor="let categorie of categories" 
+            (click)="itemClick(categorie.id)" [ngClass]="isChecked(categorie.id)">
+
+            <span class="checkbox"><ion-icon name="checkmark-outline" class="check-icon"></ion-icon></span>
+            <span class="item-text">{{categorie.name}}</span>
+
+        </li>
+    </ul>
+
+    <button class="btn" (click)="send()">Guardar</button>
+  </div>

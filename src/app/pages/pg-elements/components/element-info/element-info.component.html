@@ -1,0 +1,23 @@
+<div class="cotainer" *ngIf="data">
+    <div class="header-container">
+        <h2>{{data.name}}</h2>
+        <div class="tools">
+            <div (click)="_elementService.update(data)" class="btn-icon"><ion-icon style="color:#2196f3;" name="create-outline"></ion-icon></div>
+            <div (click)="deleteElement(data)" class="btn-icon"><ion-icon style="color:#e34f26;" name="trash-outline"></ion-icon></div>
+            <button (click)="addCategories()" class="btn">Añadir categorias</button>
+        </div>
+    </div>
+    
+    <div class="content">
+        <div class="imgBx">
+            <img src="http://localhost/apis/keykon-material/media/elements/{{data.img}}" (load)="onImageLoad($event)" alt="{{data.name}}">
+        </div>
+        
+        <div class="content-info">
+            <p>{{data.desc}}</p>
+            <a href="{{data.url}}" target="_blank">Ver elemento</a>
+        </div>
+
+    </div>
+</div>
+

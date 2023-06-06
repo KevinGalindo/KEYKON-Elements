@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="navigation" [ngClass]="{'active': isActive}">
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="icon"><ion-icon style="font-size:2.8em;" name="logo-ionitron"></ion-icon></span>
+                    <span class="title"><span>K</span>ey<span>K</span>on <span>M</span>aterial</span>
+                </a>
+            </li>
+            <li routerLinkActive="hovered">
+                <a routerLink="/home">
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="title">Inicio</span>
+                </a>
+            </li>
+            <li routerLinkActive="hovered">
+                <a routerLink="/elementos">
+                    <span class="icon"><ion-icon name="grid-outline"></ion-icon></span>
+                    <span class="title">Elementos</span>
+                </a>
+            </li>
+            <li routerLinkActive="hovered">
+                <a routerLink="/categorias">
+                    <span class="icon"><ion-icon name="apps-outline"></ion-icon></span>
+                    <span class="title">Categorías</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><ion-icon name="help-outline"></ion-icon></span>
+                    <span class="title">Ayuda</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="main" [ngClass]="{'active': isActive}">
+    <app-header-nav (clickMenu)="closeMenu()"></app-header-nav>
+    <router-outlet></router-outlet>
+</div>

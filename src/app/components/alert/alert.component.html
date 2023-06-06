@@ -1,0 +1,22 @@
+<div class="container">
+
+    <div class="content-header">
+        <div class="icon">
+            <ion-icon name="{{data?.icon}}"></ion-icon>
+        </div>
+        <h3>{{data?.titulo}}</h3>
+    </div>
+
+    <div class="content">
+        <p>{{data?.content}}</p>
+    </div>
+    <div class="tools" *ngIf="data?.tools">
+        <button class="btn" style="background:#e34f26;" (click)="response(false)">NO</button>
+        <button class="btn" (click)="response(true)">Si</button>
+    </div>
+
+    <div class="tools" *ngIf="data?.tools == false">
+        <button class="btn" style="background: var(--blue);" (click)="response(false)">Aceptar</button>
+    </div>
+
+</div>

@@ -1,0 +1,27 @@
+<div class="content">
+
+    <div style="background-image: url('assets/img-portatil.svg');" class="box-content">
+        <div class="box">
+            <h2>Necesitas <b>inspiración?</b></h2>
+            <h4>Busca y encuentra los elementos que necesites para tu sitio web.</h4>
+        </div>
+    </div>
+
+    <app-card-elements [elements]="elementsDateDesc | slice:0:6" title="Ultimos agregados"></app-card-elements>
+    <div class="content-btn">
+        <a class="btn">Ver mas</a>
+    </div>
+    <app-card-elements [elements]="elementsForCategory | slice:0:6" title="Web Sites"></app-card-elements>
+    <div class="content-btn">
+        <a class="btn">Ver mas</a>
+    </div>
+    <app-card-elements [elements]="elementsForCategoryRamdon | slice:0:6" [title]="titleCategoryRamdom"></app-card-elements>
+    <div class="content-btn">
+        <a class="btn">Ver mas</a>
+    </div>
+    <app-card-elements [elements]="elementsForCategoryRamdonTwo | slice:0:6" [title]="titleCategoryRamdomTwo"></app-card-elements>
+    <div class="content-btn">
+        <a class="btn">Ver mas</a>
+    </div>
+
+</div>

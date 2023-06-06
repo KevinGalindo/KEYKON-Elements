@@ -1,0 +1,24 @@
+<div class="form" [formGroup]="form">
+    <h2>Crear Elemento</h2>
+    <div class="inputBox" [class.invalid]="form.get('name')?.invalid && form.get('name')?.touched">
+        <input type="text" required="required" formControlName="name">
+        <span>Nombre del elemento</span>
+        <i></i>
+    </div>
+    <div class="inputBox" [class.invalid]="form.get('url')?.invalid && form.get('url')?.touched">
+        <input type="text" required="required" formControlName="url">
+        <span>URL del elemento</span>
+        <i></i>
+    </div>
+    <div class="inputBox">
+        <textarea required="required" formControlName="desc"></textarea>
+        <span>Descripción del elemento</span>
+        <i></i>
+    </div>
+    <div class="inputBox">
+        <input type="file" #imgFile hidden (change)="tryFile($event)">
+        <span>Imagen del elemento</span>
+        <ion-icon name="attach-outline" (click)="imgFile.click()"></ion-icon>
+    </div>
+    <button (click)="send()" class="submit">Crear</button>
+</div>

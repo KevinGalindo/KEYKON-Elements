@@ -1,0 +1,65 @@
+.select-container{
+    position: relative;
+    max-width: 320px;
+    width: 100%;
+    text-align: center;
+    .list-items {
+        position: relative;
+        display: block;
+        border-radius: 8px;
+        padding: 16px;
+        background-color: var(--cards-bg);
+        list-style: none;
+        min-width: 300px;
+        max-height: 320px;
+        overflow-x: auto;
+        .item {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            height: 50px;
+            cursor: pointer;
+            transition: 0.3s;
+            padding: 0 15px;
+            border-radius: 8px;
+            &:hover {
+                background-color: var(--background);
+            }
+            &.checked{
+                .checkbox {
+                    background-color: var(--blue);
+                    border-color: var(--blue);
+                    .check-icon {
+                        transform: scale(1);
+                    }
+                }
+            }
+            .checkbox {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 16px;
+                width: 16px;
+                border-radius: 4px;
+                margin-right: 12px;
+                border: 1.5px solid #c0c0c0;
+                transition: all 0.3s ease-in-out;
+                .check-icon {
+                    color: #fff;
+                    font-size: 11px;
+                    transform: scale(0);
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+            .item-text {
+                font-size: 16px;
+                font-weight: 400;
+                color: var(--text-color);
+            }
+        }
+    }
+    .btn{
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}

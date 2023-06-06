@@ -1,0 +1,24 @@
+<h2 class="title">Todas las categorías</h2>
+<div class="cardBox">
+    <div    class="card" 
+            *ngFor="let categorie of categories" 
+            [ngStyle]="{ 'background-color': categorie.color }">
+
+        <div class="content-card" (click)="navigateToElements(categorie.name)">
+            <h2>{{categorie.name}}</h2>
+            <p>{{categorie.desc}}</p>
+            <p>Elementos: {{categorie.num_elements}}</p>
+        </div>
+        <div class="content-hidden">
+            <div class="tools">
+                <div (click)="update(categorie)" class="btn-icon"><ion-icon style="color:#2196f3;" name="create-outline"></ion-icon></div>
+                <div (click)="delete(categorie)" class="btn-icon"><ion-icon style="color:#e34f26;" name="trash-outline"></ion-icon></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="create" (click)="create()">
+    <ion-icon name="add-outline"></ion-icon>
+</div>

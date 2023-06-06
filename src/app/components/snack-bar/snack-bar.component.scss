@@ -1,0 +1,32 @@
+.container{
+    min-width: 100%;
+    min-height: 100%;
+    padding: 14px 16px;
+    background: var(--cards-bg);
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 16px;
+    &.success{
+        background: #51A351;
+    }
+    &.error{
+        background: #BD362F;
+    }
+    &.info{
+        background: #2F96B4;
+    }
+    &.warning{
+        background: #F89406;
+    }
+    p{
+        color: var(--text-color);
+        font-size: 1.1em;
+        margin: 0;
+    }
+    ion-icon{
+        color: var(--text-color);
+        font-size: 1.5em;
+    }
+}

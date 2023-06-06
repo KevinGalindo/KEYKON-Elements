@@ -1,0 +1,48 @@
+<h2 class="title">Filtrar</h2>
+<div class="filters" style="display: flex;padding: 20px;">
+
+    <div class="filter-container">
+        <div class="dropdown" [ngClass]="{'active': dropdown}" (click)="dropdown = !dropdown">
+            <input type="text" class="textBox" placeholder="{{inputDropText}}" readonly>
+            <div class="option">
+                <div (click)="SortByName(true)">Nombre</div>
+                <div (click)="SortByDate(true)">Fecha</div>
+                <div (click)="SortByName(false)">Nombre decendente</div>
+                <div (click)="SortByDate(false)">Fecha decendente</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="filter-container">
+        <div class="dropdown" #dropdownTwo (click)="dropdownToggle(dropdownTwo)">
+            <input type="text" #dropdownInput class="textBox" placeholder="Categoterias" readonly>
+            <div class="option">
+                <div (click)="_elements.clearSearch()" (click)="setDropdownText(dropdownInput,'todas')">todas</div>
+                <div *ngFor="let cate of listCate" (click)="_elements.byCategory(cate.name)" (click)="setDropdownText(dropdownInput,cate.name)">{{cate.name}}</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<h2 class="title" style="margin-top:0px;">{{title}}. <span *ngIf="searchValue"><ion-icon (click)="closeSearch()" name="close-outline"></ion-icon></span></h2>
+
+<div class="cardBox" *ngIf="elements.length > 0">
+    <div class="card" *ngFor="let item of elements">
+        <a [routerLink]="['/elementos', item.id]" style="text-decoration: none;">
+            <div class="imgBx">
+                <img src="http://localhost/apis/keykon-material/media/elements/{{item.img}}" alt="nombre">
+            </div>
+            <div class="content-card">
+                <h2>{{item.name}}</h2>
+                <div class="type color-blue" *ngIf="item.categories">
+                    <span *ngFor="let item of isArray(item.categories)">{{item}}</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="create" (click)="create()">
+    <ion-icon name="add-outline"></ion-icon>
+</div>
